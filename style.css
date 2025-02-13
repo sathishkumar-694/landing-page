@@ -2,13 +2,13 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("4.jpeg");
+  background-image: url("images/4.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: Arial, sans-serif;
-  }
+}
 h1 {
   font-family: serif, sans-serif;
   text-align: center;
@@ -16,9 +16,9 @@ h1 {
   padding-top: 40px;
   font-size: 2.5rem;
 }
-.h{
+.h {
   position: sticky;
-  top:0px;
+  top: 0px;
 }
 .buttons {
   display: flex;
@@ -32,11 +32,9 @@ h1 {
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: fit-content;
   margin: 0 auto;
-  
 }
 
 .buttons a {
-
   text-decoration: none;
   color: white;
   padding: 10px 20px;
@@ -129,4 +127,64 @@ h1 {
 
 .form button:hover {
   background-color: rgb(227, 21, 21);
+}
+.destinations {
+  display: grid;
+  border-radius: 20px;
+  height: 400px;
+  width:80%;
+  grid-auto-flow: column;
+  background: hsla(0, 0%, 2%, 0.2);
+  box-shadow: 0 4px 8px rgba(161, 89, 89, 0.2);
+  gap: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  align-content:center;
+  
+}
+.destinations::-webkit-scrollbar {
+  display: none;
+}
+
+#move1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100vh;
+}
+
+img {
+  color: white;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+  }
+.item img:hover {
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  }
+.item p {
+  color: white;
+  display: none;
+}
+.item:hover p {
+  text-align:center;
+  display: block;
+  
+}
+#move4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  height: 100vh;
+}
+.ad {
+  line-height: 30px;
 }
