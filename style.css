@@ -7,29 +7,33 @@ html {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
 }
+
 h1 {
-  font-family: serif, sans-serif;
+  font-family:serif;
   text-align: center;
   color: white;
   padding-top: 40px;
   font-size: 2.5rem;
 }
+
 .h {
   position: sticky;
-  top: 0px;
+  top: 0;
+  z-index: 1000;
 }
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 15px 30px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   width: fit-content;
   margin: 0 auto;
 }
@@ -47,6 +51,7 @@ h1 {
   background-color: red;
   border-radius: 10px;
 }
+
 .main {
   text-align: center;
   margin-top: 20px;
@@ -59,6 +64,7 @@ h1 {
   padding: 10px 20px;
   background-color: red;
   border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .main a:hover {
@@ -74,28 +80,30 @@ h1 {
   max-width: 100%;
   margin: 0 auto;
 }
+
 .flexbox {
-  background: rgba(4, 4, 4, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   padding: 50px;
   border-radius: 10px;
   color: white;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(161, 89, 89, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   height: 200px;
   width: clamp(10%, 20%, 40%);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
+
 .flexbox:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
+
 .box {
-  margin-top: 150px;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 150px auto;
   padding: 20px;
   max-width: 40%;
   color: white;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
   backdrop-filter: blur(10px);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
@@ -104,13 +112,17 @@ h1 {
 .form {
   padding: 20px;
 }
+
 .form input {
   height: 40px;
   width: 100%;
   border: none;
   margin-bottom: 15px;
   border-radius: 5px;
+  padding: 0 10px;
+  transition: background 0.3s ease;
 }
+
 .form input:hover {
   background: rgba(255, 255, 255, 0.9);
 }
@@ -122,69 +134,83 @@ h1 {
   border: none;
   color: white;
   border-radius: 5px;
-  margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .form button:hover {
   background-color: rgb(227, 21, 21);
 }
+
 .destinations {
   display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 20px;
   border-radius: 20px;
   height: 400px;
-  width:80%;
-  grid-auto-flow: column;
-  background: hsla(0, 0%, 2%, 0.2);
-  box-shadow: 0 4px 8px rgba(161, 89, 89, 0.2);
-  gap: 20px;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  align-content:center;
-  
-}
+  width: 80%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  }
+
 .destinations::-webkit-scrollbar {
   display: none;
 }
 
-#move1{
+.item {
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.item img {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.item:hover img {
+  transform: scale(0.8);
+  height:200px;
+  width:200px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.item h3, .item p {
+  display: none;
+}
+
+.item:hover h3, .item:hover p {
+  display: block;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  height:380px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+#move1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:100%;
-  height:100vh;
+  width: 100%;
+  height: 100vh;
 }
 
-img {
-  color: white;
-  text-align: center;
-  height: 250px;
-  width: 250px;
-  padding: 10px;
-  border-radius: 20px;
-  transition: 0.5s;
-  }
-.item img:hover {
-  cursor: pointer;
-  height: 200px;
-  width: 200px;
-  }
-.item p {
-  color: white;
-  display: none;
-}
-.item:hover p {
-  text-align:center;
-  display: block;
-  
-}
-#move4{
+#move4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
   height: 100vh;
-}
-.ad {
-  line-height: 30px;
 }
